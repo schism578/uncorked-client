@@ -8,7 +8,7 @@
     new, save the details, remember and revisit your favorites by searching  
     any of those details. Discover. Delight. Uncork it!
 
-### [Check out the app here!](https://you-move-client-akjxxxxuu.vercel.app)
+### [Check out the app here!](https://uncorked-client-poskbd1in.vercel.app)
 &nbsp;&nbsp;&nbsp;Demo Credentials:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: user@gmail.com  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: Useracc3!
