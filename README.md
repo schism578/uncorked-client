@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+<img src='./src/images/uncorked-logo.png' alt='app icon' width='150'/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Uncorked  
 
-## Available Scripts
+## *Open. Experience. Record. Revisit.*
 
-In the project directory, you can run:
+    Uncorked is a way to record your favorite wine experiences. Open something new, save the details, remember and revisit your favorites by searching any of those details. Discover. Delight. Uncork it!
 
-### `npm start`
+### [Check out the app here!](https://you-move-client-akjxxxxuu.vercel.app)
+&nbsp;&nbsp;&nbsp;Demo Credentials:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: user@gmail.com  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: Useracc3!
+#### [Client Repository](https://github.com/schism578/uncorked-client.git)
+#### [API Repository](https://github.com/schism578/uncorked-api.git)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies:  
+&nbsp;&nbsp;&nbsp;**React**  
+&nbsp;&nbsp;&nbsp;**CSS**  
+&nbsp;&nbsp;&nbsp;**Jest**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Screenshots:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p float='left'>
+<img src='./src/images/home-page.png' alt='screenshot of home page' width='300' height='450'>
+<img src='./src/images/login-page.png' alt='screenshot of login page' width='300' height='450'>
+</p>
+<p float='left'>
+<img src='./src/images/entry-page.png' alt='screenshot of entry page' width='300' height='450'>
+<img src='./src/images/results-page.png' alt='screenshot of results page' width='300' height='450'>
+</p>
