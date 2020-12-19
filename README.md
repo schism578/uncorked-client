@@ -13,7 +13,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: user@gmail.com  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: Useracc3!
 #### [Client Repository](https://github.com/schism578/uncorked-client.git)
-#### [API Repository](https://github.com/schism578/uncorked-api.git)
+<!--#### [API Repository](https://github.com/schism578/uncorked-api.git)-->
 
 ### Technologies:  
 &nbsp;&nbsp;&nbsp;**React**  
@@ -29,4 +29,4 @@
 <p float='left'>
 <img src='./src/images/entry-page.png' alt='screenshot of main page' width='300' height='450'>
 <img src='./src/images/results-page.png' alt='screenshot of search results page' width='300' height='450'>
-</p> --!>
+</p> -->
