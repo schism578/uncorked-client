@@ -4,7 +4,9 @@
 
 ## *Open. Experience. Record. Revisit.*
 
-    Uncorked is a way to record your favorite wine experiences. Open something new, save the details, remember and revisit your favorites by searching any of those details. Discover. Delight. Uncork it!
+    Uncorked is a way to record your favorite wine experiences. Open something  
+    new, save the details, remember and revisit your favorites by searching  
+    any of those details. Discover. Delight. Uncork it!
 
 ### [Check out the app here!](https://you-move-client-akjxxxxuu.vercel.app)
 &nbsp;&nbsp;&nbsp;Demo Credentials:  
