@@ -20,13 +20,13 @@
 &nbsp;&nbsp;&nbsp;**CSS**  
 &nbsp;&nbsp;&nbsp;**Jest**
 
-### Screenshots:
+<!-- ### Screenshots:
 
 <p float='left'>
 <img src='./src/images/home-page.png' alt='screenshot of home page' width='300' height='450'>
 <img src='./src/images/login-page.png' alt='screenshot of login page' width='300' height='450'>
 </p>
 <p float='left'>
-<img src='./src/images/entry-page.png' alt='screenshot of entry page' width='300' height='450'>
-<img src='./src/images/results-page.png' alt='screenshot of results page' width='300' height='450'>
-</p>
+<img src='./src/images/entry-page.png' alt='screenshot of main page' width='300' height='450'>
+<img src='./src/images/results-page.png' alt='screenshot of search results page' width='300' height='450'>
+</p> --!>
