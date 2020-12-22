@@ -7,10 +7,10 @@ import AuthApiService from '../services/auth-api-service';
 import './login.css';
 
 class Login extends React.Component {
-    static defaultProps = {
+    /*static defaultProps = {
         onRegistrationSuccess: () => { },
         onLoginSuccess: () => { }
-    }
+    }*/
     static contextType = Context;
     user_id = this.context.userInfo.user_id;
 
@@ -26,7 +26,8 @@ class Login extends React.Component {
             password: {
                 touched: false,
                 value: '',
-            }
+            },
+            error: null
         },
         loginUser: {
             username: {
@@ -82,9 +83,9 @@ class Login extends React.Component {
         AuthApiService.postUser(newUser)
             .then(res => {
                 console.log(res)
-                this.props.onRegistrationSuccess()
+                //this.props.onRegistrationSuccess()
                 TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
+                //this.props.onLoginSuccess()
                 this.context.setUserInfo(newUser)
                 this.props.history.push('/main')
             })
@@ -102,10 +103,15 @@ class Login extends React.Component {
             .then(res => {
                 console.log(res)
                 TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
-                this.context.setUserProfile(res.user)
-                WineApiService.getWine(this.user_id)
+                console.log(res.authToken)
+                //this.props.onLoginSuccess()
+                this.context.setUserInfo(res.user)
+                console.log(res.user)
+                WineApiService.getWine(res.user.user_id)
+            .then((res) => {
+                this.context.setWines(res)
                 this.props.history.push('/main')
+            })
             })
             .catch(res => {
                 this.setState({ error: res.error })

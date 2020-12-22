@@ -3,7 +3,8 @@ import config from '../config';
 
 const WineApiService = {
     getWine(userId) {
-        return fetch(`${config.WINE_API_ENDPOINT}/wine/${userId}`, {
+        return fetch(`${config.USER_API_ENDPOINT}/wine/${userId}`, {
+            method: 'GET',
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
@@ -15,15 +16,13 @@ const WineApiService = {
             )
     },
 
-    postWine(userId) {
+    postWine(userId, newWine) {
         return fetch(`${config.USER_API_ENDPOINT}/wine/${userId}`, {
             method: 'POST',
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
-            body: JSON.stringify({
-                user_id: userId,
-            }),
+            body: JSON.stringify({ newWine }),
         })
             .then(res =>
                 (!res.ok)

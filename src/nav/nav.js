@@ -6,6 +6,21 @@ import './nav.css';
 export default class Nav extends React.Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        localStorage.clear()
+    }
+
+    renderLogoutLink() {
+        return (
+            <div className='Header__logged-in'>
+                <Link
+                    onClick={this.handleLogoutClick}
+                    to='/login'
+                    className='logout-link'
+                >
+                    logout
+                </Link>
+            </div>
+        )
     }
 
     render() {
@@ -16,13 +31,9 @@ export default class Nav extends React.Component {
                     <li><Link to='/search' type='button' className='nav-link'>search</Link></li>
                     <li><Link to='/history' type='button' className='nav-link'>history</Link></li>
                 </ul>
-                <Link
-                    onClick={this.handleLogoutClick}
-                    to='/login'
-                    className='logout-link'
-                >
-                    logout
-                </Link>
+                {TokenService.hasAuthToken()
+                    ? this.renderLogoutLink()
+                    : ''}
             </div>
         )
     }

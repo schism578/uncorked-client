@@ -50,9 +50,9 @@ class App extends React.Component {
     })
   }
 
-  handleAddWine = wine => {
+  handleAddWine = newWine => {
     this.setState({
-      wines: [...this.state.wines, wine],
+      wines: [...this.state.wines, newWine],
     })
   }
 
@@ -74,6 +74,7 @@ class App extends React.Component {
 
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
+    localStorage.clear()
   }
 
   renderRoutes() {
@@ -99,6 +100,8 @@ class App extends React.Component {
       wines: this.state.wines,
       wine: this.state.wine,
       setUserInfo: this.setUserInfo,
+      setWines: this.setWines,
+      handleAddWine: this.handleAddWine,
       handleHomePage: this.handleHomePage,
       handleLoginPage: this.handleLoginPage,
       handleMainPage: this.handleMainPage,
