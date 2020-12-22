@@ -1,31 +1,29 @@
-* {
-    box-sizing: border-box;
+.container {
+    display: block;
+    /*background-color: rgba(255, 198, 205, 0.6);*/
+    width: 70vw;
+    height: 40vh;
+    margin: 4em auto;
 }
 
-body {
-    font-family: "Open Sans",
-    sans-serif;
+h2, p {
+    margin: 3em auto;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
     font-size: 20px;
-    color: #444;
-    text-align: center;
-    line-height: 1.5;
 }
 
-header {
-    padding: 45px 15px;
+.start-button {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin: 2em auto;
 }
 
-section {
-    min-height: 200px;
-    padding: 30px 15px;
-    background-color: #bbb;
-}
-
-section:nth-child(even) {
-    background-color: #ddd;
-}
-
-button {
-    padding: 0.5em 1em;
-    border-radius: 5px;
+.start-button:hover {
+    color: firebrick;
 }

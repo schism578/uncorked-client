@@ -1,26 +1,133 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-//import Context from '../context';
-//import config from '../config';
-//import { withRouter } from 'react-router-dom';
-//import TokenService from '../services/token-service';
-//import AuthApiService from '../services/auth-api-service';
+import WineApiService from '../services/wine-api-service';
+import Context from '../context';
+import { withRouter } from 'react-router-dom';
+import TokenService from '../services/token-service';
+import AuthApiService from '../services/auth-api-service';
 import './login.css';
 
 class Login extends React.Component {
+    static defaultProps = {
+        onRegistrationSuccess: () => { },
+        onLoginSuccess: () => { }
+    }
+    static contextType = Context;
+    user_id = this.context.userInfo.user_id;
+
+    state = {
+        newUser: {
+            user_id: {
+                value: ''
+            },
+            username: {
+                touched: false,
+                value: '',
+            },
+            password: {
+                touched: false,
+                value: '',
+            }
+        },
+        loginUser: {
+            username: {
+                touched: false,
+                value: '',
+            },
+            password: {
+                touched: false,
+                value: '',
+            },
+            error: null
+        }
+    }
+
+    initiateNewUserData = (input, value) => {
+        this.setState({
+            newUser: {
+                ...this.state.newUser,
+                [input]: {
+                    touched: true,
+                    value: value,
+                },
+            },
+        })
+    }
+
+    initiateUserLogin = (input, value) => {
+        this.setState({
+            loginUser: {
+                ...this.state.loginUser,
+                [input]: {
+                    touched: true,
+                    value: value,
+                },
+            },
+        })
+    }
+
+    /*componentDidUpdate() {
+        if (`${this.state.user_id}` !== `${this.context.userInfo.user_id}`) {
+            this.setState({
+                user_id: this.context.userInfo.user_id
+            })
+        }
+    }*/
+
+    handleCreateFormSubmit = e => {
+        e.preventDefault()
+        const newUser = {
+            username: this.state.newUser.username.value,
+            password: this.state.newUser.password.value,
+        }
+        AuthApiService.postUser(newUser)
+            .then(res => {
+                console.log(res)
+                this.props.onRegistrationSuccess()
+                TokenService.saveAuthToken(res.authToken)
+                this.props.onLoginSuccess()
+                this.context.setUserInfo(newUser)
+                this.props.history.push('/main')
+            })
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
+    }
+
+    handleLoginFormSubmit = e => {
+        e.preventDefault()
+        AuthApiService.postLogin({
+            username: this.state.loginUser.username.value,
+            password: this.state.loginUser.password.value,
+        })
+            .then(res => {
+                console.log(res)
+                TokenService.saveAuthToken(res.authToken)
+                this.props.onLoginSuccess()
+                this.context.setUserProfile(res.user)
+                WineApiService.getWine(this.user_id)
+                this.props.history.push('/main')
+            })
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
+    }
+
     render() {
         return (
             <div>
-                <form className='create-form'>
+                <form className='create-form' onSubmit={this.handleCreateFormSubmit}>
                     <fieldset className='create-field'>
-                        <legend>Create Profile:</legend>
+                        <legend>create profile:</legend>
+                        {this.state.error &&
+                            <h3 className='error'> {this.state.error} </h3>}
                         <ul className='profile-list'>
                             <li>
                                 <input
                                     type='text'
                                     className='create-creds'
-                                    id='create-username'
-                                    placeholder='Username'
+                                    id='username'
+                                    placeholder='username'
+                                    onChange={(e) => this.initiateNewUserData('username', e.target.value)}
                                     required
                                 />
                             </li>
@@ -28,30 +135,29 @@ class Login extends React.Component {
                                 <input
                                     type='password'
                                     className='create-creds'
-                                    id='create-password'
-                                    placeholder='Password'
+                                    id='password'
+                                    placeholder='password'
+                                    onChange={(e) => this.initiateNewUserData('password', e.target.value)}
                                     required
                                 />
                             </li>
                         </ul>
-                        <Link
-                                to='/main'
-                                type='button'
-                                className='create-button'
-                            >
-                                Sign Up</Link>
+                        <button type='submit' className='create-button'>sign up</button>
                     </fieldset>
                 </form>
-                <form className='login-form'>
+                <form className='login-form' onSubmit={this.handleLoginFormSubmit}>
                     <fieldset className='login-field'>
-                        <legend>Log In:</legend>
+                        <legend>log in:</legend>
+                        {this.state.error &&
+                            <h3 className='error'> {this.state.error} </h3>}
                         <ul className='login-list'>
                             <li>
                                 <input
                                     type='text'
                                     className='login-creds'
-                                    id='login-username'
-                                    placeholder='Email'
+                                    id='username'
+                                    placeholder='username'
+                                    onChange={(e) => this.initiateUserLogin('username', e.target.value)}
                                     required
                                 />
                             </li>
@@ -59,18 +165,15 @@ class Login extends React.Component {
                                 <input
                                     type='password'
                                     className='login-creds'
-                                    id='login-password'
-                                    placeholder='Password'
+                                    id='password'
+                                    placeholder='password'
+                                    onChange={(e) => this.initiateUserLogin('password', e.target.value)}
                                     required
                                 />
                             </li>
                         </ul>
-                        <Link
-                                to='/main'
-                                type='button'
-                                className='login-button'
-                            >
-                                Login</Link>
+                        <button type='submit' className='login-button'>login</button>
+
                     </fieldset>
                 </form>
             </div>
@@ -78,4 +181,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);

@@ -4,15 +4,15 @@ import './home.css';
 
 export default function Home() {
     return (
-        <div>
-            <h2>Making memories, one glass at a time</h2>
-            <p>Open something new. Record your memories. Revisit your favorites.</p>
+        <div className='container'>
+            <h2>making memories, one glass at a time</h2>
+            <p>open something new. record your memories. revisit your favorites.</p>
             <Link
                 to='/login'
                 type='button'
                 className='start-button'
             >
-                Begin</Link>
+                begin</Link>
         </div>
     )
 }

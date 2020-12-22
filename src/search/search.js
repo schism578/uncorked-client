@@ -1,34 +1,57 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import Context from '../context';
+import Context from '../context';
 //import config from '../config';
-//import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //import TokenService from '../services/token-service';
 //import AuthApiService from '../services/auth-api-service';
 import './search.css';
 
 class Search extends React.Component {
+    static contextType = Context;
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchWine: {
+                winemaker: '',
+                wine_type: '',
+                wine_name: '',
+                varietal: '',
+                vintage: '',
+                region: '',
+                tasting_notes: '',
+                rating: '',
+            }
+        }
+    }
     render() {
         return (
             <div>
                 <form className='search-form' >
                     <fieldset className='search-field'>
-                        <legend>Search</legend>
+                        <legend>search</legend>
                         <ul>
                             <li>
-                                <input placeholder='Winemaker' type='text' className='winemaker' id='winemaker' />
+                                <input placeholder='winemaker' type='text' className='winemaker' id='winemaker' />
                             </li>
                             <li>
-                                <input placeholder='Wine Name' type='text' className='wine-name' id='wine-name' />
+                                <input placeholder='wine type' type='text' className='wine-type' id='wine-type' />
                             </li>
                             <li>
-                                <input placeholder='Grape Varietals' type='text' className='varietals' id='varietals' />
+                                <input placeholder='wine name' type='text' className='wine-name' id='wine-name' />
                             </li>
                             <li>
-                                <input placeholder='Vintage' type='text' className='vintage' id='vintage' />
+                                <input placeholder='grape varietals' type='text' className='varietals' id='varietals' />
                             </li>
                             <li>
-                                <input placeholder='Rating:   * * * * *' type='text' className='rating' id='rating' />
+                                <input placeholder='vintage' type='text' className='vintage' id='vintage' />
+                            </li>
+                            <li>
+                                <input placeholder='region' type='text' className='region' id='region' />
+                            </li>
+                            <li>
+                                <input placeholder='rating:   * * * * *' type='text' className='rating' id='rating' />
                             </li>
                         </ul>
                     </fieldset>
@@ -39,17 +62,17 @@ class Search extends React.Component {
                     type='button'
                     className='search-button'
                 >
-                    Search</Link>
+                    search</Link>
                 <br></br>
                 <Link
                     to='/main'
                     type='button'
-                    className='create-button'
+                    className='cancel-button'
                 >
-                    Cancel</Link>
+                    cancel</Link>
             </div>
         )
     }
 }
 
-export default Search;
+export default withRouter(Search);

@@ -1,0 +1,16 @@
+legend {
+    font-size: 20px;
+}
+
+.create-button, .login-button {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.create-button:hover, .login-button:hover {
+    color: firebrick;
+}
+
+ul {
+    padding: 0;
+}

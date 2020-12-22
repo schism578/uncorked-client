@@ -1,0 +1,8 @@
+.search-button, .cancel-button {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.search-button:hover, .cancel-button:hover {
+    color: firebrick;
+}

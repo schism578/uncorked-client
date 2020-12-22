@@ -10,29 +10,31 @@ import './history.css';
 export default function UserHistory() {
     return (
         <div>
-            <h2>History</h2>
+            <h2>history</h2>
             <ul>
-                <li>Winemaker:  Sean Thackeray</li>
-                <li>Wine Name:  Orion</li>
-                <li>Varietal(s):  Syrah</li>
-                <li>Vintage:  2016</li>
-                <li id='tasting-notes'>Tasting Notes:  smoke, olives, herbal, oaky, tannic</li>
-                <li>Rating: * * * * *</li>
+                <li>winemaker:  Sean Thackeray</li>
+                <li>wine name:  Orion</li>
+                <li>varietal(s):  Syrah</li>
+                <li>vintage:  2016</li>
+                <li>wine type:  red</li>
+                <li id='tasting-notes'>tasting notes:  smoke, olives, herbal, oaky, tannic</li>
+                <li>rating: * * * * *</li>
             </ul>
             <ul>
-                <li>Winemaker:  Andre Clouet</li>
-                <li>Wine Name:  Brut Rose</li>
-                <li>Varietal(s):  Champagne</li>
-                <li>Vintage:  NV</li>
-                <li id='tasting-notes'>Tasting Notes:  quince, roasted strawberries, lactic, opulent effervescence</li>
-                <li>Rating: * * * * *</li>
+                <li>winemaker:  Andre Clouet</li>
+                <li>wine name:  Brut Rose</li>
+                <li>varietal(s):  Champagne</li>
+                <li>vintage:  NV</li>
+                <li>wine type:  sparkling</li>
+                <li id='tasting-notes'>tasting notes:  quince, roasted strawberries, lactic, opulent effervescence</li>
+                <li>rating: * * * * *</li>
             </ul>
             <Link
                                 to='/main'
                                 type='button'
                                 className='return-button'
                             >
-                                Go Back</Link>
+                                go back</Link>
         </div>
     )
 }

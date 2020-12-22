@@ -3,6 +3,19 @@
     justify-content: space-around;
 }
 
+.nav-link {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: firebrick;
+}
+
 ul {
     list-style-type: none;
+}
+
+.logout-link {
+    color: white;
 }

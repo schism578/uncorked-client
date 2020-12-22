@@ -1,0 +1,16 @@
+legend {
+    font-size: 20px;
+}
+
+.tasting-notes {
+    min-height: 10vh;
+}
+
+.add-button {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.add-button:hover {
+    color: firebrick;
+}
