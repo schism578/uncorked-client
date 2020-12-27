@@ -45,6 +45,10 @@ class App extends React.Component {
           (user) => {
             this.setUserInfo(user)
             WineApiService.getWine(user.user_id)
+            .then(
+              (res) => {
+              this.setWines(res)
+              })
           })
     }
   }

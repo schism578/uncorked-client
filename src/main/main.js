@@ -42,10 +42,7 @@ class Main extends React.Component {
                 touched: false,
                 value: '',
             },
-            rating: {
-                touched: false,
-                value: '',
-            },
+            rating: '',
             img_url: {
                 touched: false,
                 value: '',
@@ -88,6 +85,7 @@ class Main extends React.Component {
                     : res.json()
             )
             .then(res => {
+                console.log(res)
                 this.context.handleAddWine(res)
             })
     }
@@ -108,8 +106,8 @@ class Main extends React.Component {
         }
         this.postWine(newWine)
             .then(() => {
-                this.context.handleAddWine(newWine)
-                this.context.setWines(newWine)
+                /*this.context.handleAddWine(res)
+                this.context.setWines(res)*/
                 this.props.history.push('/history')
             })
             .catch(res => {
