@@ -1,6 +1,8 @@
 .nav-links {
     display: flex;
     justify-content: space-around;
+    list-style-type: none;
+
 }
 
 .nav-link {
@@ -12,10 +14,10 @@
     color: firebrick;
 }
 
-ul {
-    list-style-type: none;
-}
-
 .logout-link {
     color: white;
+}
+
+.logout-link:hover {
+    color: firebrick;
 }

@@ -1,3 +1,17 @@
+.user-wine-list {
+    max-width: 30vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user-wine-item {
+    list-style-type: none;
+	display: block; 
+    text-align: left;
+    margin: 1.5em auto;
+    padding: 0;
+}
+
 .return-button {
     color: rgb(255, 255, 255);
     font-size: 20px;

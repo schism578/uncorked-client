@@ -13,8 +13,11 @@ body {
 }
 
 h1 {
-    margin: 2em auto;
-    font-size: 32px;
+    margin: 0.5em auto;
+    font-size: 48px;
+    font-weight: bolder;
+    color: blanchedalmond;
+    /*background-color: rgba(110, 90, 70, 0.7);*/
 }
 
 input {

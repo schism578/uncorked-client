@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import AuthApiService from './services/auth-api-service';
+import WineApiService from './services/wine-api-service';
 import Home from './home/home';
 import Login from './login/login';
 import Main from './main/main';
@@ -36,9 +38,20 @@ class App extends React.Component {
     }
   }
 
-  setUserInfo = info => {
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      AuthApiService.getUser()
+        .then(
+          (user) => {
+            this.setUserInfo(user)
+            WineApiService.getWine(user.user_id)
+          })
+    }
+  }
+
+  setUserInfo = user => {
     this.setState({
-      userInfo: info,
+      userInfo: user,
       error: null,
     })
   }
@@ -52,7 +65,7 @@ class App extends React.Component {
 
   handleAddWine = newWine => {
     this.setState({
-      wines: [...this.state.wines, newWine],
+      wines: [...this.state.wines, newWine]
     })
   }
 
