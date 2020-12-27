@@ -7,7 +7,7 @@ import Login from './login/login';
 import Main from './main/main';
 import Search from './search/search';
 import Results from './results/results';
-import UserHistory from './history/history';
+import UserHistory from './user-history/user-history';
 import Nav from './nav/nav';
 import PublicOnlyRoute from './utils/public-only-route';
 import PrivateRoute from './utils/private-route';

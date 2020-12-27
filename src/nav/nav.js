@@ -27,7 +27,9 @@ export default class Nav extends React.Component {
         return (
             <div>
                 <ul className='nav-links'>
-                    <li><Link to='/' type='button' className='nav-link'>home</Link></li>
+                    <li><Link to={TokenService.hasAuthToken() ? '/main' : '/'} 
+                            type='button' className='nav-link'>home</Link>
+                    </li>
                     <li><Link to='/search' type='button' className='nav-link'>search</Link></li>
                     <li><Link to='/history' type='button' className='nav-link'>history</Link></li>
                 </ul>

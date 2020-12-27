@@ -3,8 +3,6 @@ import config from '../config';
 import Context from '../context';
 import { withRouter } from 'react-router-dom';
 import TokenService from '../services/token-service';
-import StarRatings from 'react-star-ratings';
-//import AuthApiService from '../services/auth-api-service';
 import './main.css';
 
 class Main extends React.Component {
@@ -42,13 +40,16 @@ class Main extends React.Component {
                 touched: false,
                 value: '',
             },
-            rating: '',
+            rating: {
+                touched: false,
+                value: ''
+            },
             img_url: {
                 touched: false,
                 value: '',
             },
             error: null,
-        }
+        },
     }
 
     initiateWineData = (input, value) => {
@@ -63,14 +64,7 @@ class Main extends React.Component {
         })
     }
 
-    changeRating = (newRating, name) => {
-        this.setState({
-            rating: newRating
-        });
-    }
-
     postWine(newWine) {
-        console.log(this.user_id)
         return fetch(`${config.USER_API_ENDPOINT}/wine/${this.user_id}`, {
             method: 'POST',
             headers: {
@@ -85,7 +79,6 @@ class Main extends React.Component {
                     : res.json()
             )
             .then(res => {
-                console.log(res)
                 this.context.handleAddWine(res)
             })
     }
@@ -106,8 +99,6 @@ class Main extends React.Component {
         }
         this.postWine(newWine)
             .then(() => {
-                /*this.context.handleAddWine(res)
-                this.context.setWines(res)*/
                 this.props.history.push('/history')
             })
             .catch(res => {
@@ -141,24 +132,16 @@ class Main extends React.Component {
                                 <input placeholder='region' type='text' className='region' id='region' onChange={(e) => this.initiateWineData('region', e.target.value)} />
                             </li>
                             <li>
-                                <input placeholder='vintage' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateWineData('vintage', e.target.value)} />
+                                <input placeholder='vintage (leave blank if non-vintage)' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateWineData('vintage', e.target.value)} />
                             </li>
                             <li>
                                 <input placeholder='tasting notes' type='text' className='tasting_notes' id='tasting_notes' onChange={(e) => this.initiateWineData('tasting_notes', e.target.value)} />
                             </li>
                             <li>
-                                <StarRatings
-                                    rating={this.state.rating}
-                                    starHoverColor='red'
-                                    starRatedColor='red'
-                                    changeRating={this.changeRating}
-                                    numberOfStars={5}
-                                    starDimension='30px'
-                                    name='rating'
-                                />
+                                <input placeholder='rate your wine: 1-5' type='number' className='rating' id='rating' onChange={(e) => this.initiateWineData('rating', e.target.value)} />
                             </li>
                             <li>
-                                <input placeholder='photo url' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
+                                <input placeholder='photo url (optional)' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
                             </li>
                         </ul>
                     </fieldset>
