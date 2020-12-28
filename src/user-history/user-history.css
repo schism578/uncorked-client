@@ -1,6 +1,6 @@
 .user-wine-list {
     max-width: 30vw;
-    margin: 0 auto;
+    margin: 0.5em auto;
     text-align: center;
 }
 
@@ -10,6 +10,11 @@
     text-align: left;
     margin: 1.5em auto;
     padding: 0;
+}
+
+img {
+    min-width: 15vw;
+    min-height: 15vh;
 }
 
 .return-button {

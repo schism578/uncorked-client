@@ -2,6 +2,14 @@ legend {
     font-size: 20px;
 }
 
+.wine_type {
+    width: 51vw;
+    height: 28px;
+    border-radius: 4px;
+    margin: 0.5em auto;
+    color: gray;
+}
+
 .tasting_notes {
     min-height: 10vh;
 }

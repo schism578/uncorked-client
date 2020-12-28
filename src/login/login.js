@@ -105,7 +105,6 @@ class Login extends React.Component {
                 this.context.setUserInfo(res.user)
                 WineApiService.getWine(res.user.user_id)
             .then((res) => {
-                console.log(res)
                 this.context.setWines(res)
                 this.props.history.push('/main')
             })

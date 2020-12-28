@@ -35,7 +35,8 @@ class App extends React.Component {
       tasting_notes: '',
       rating: '',
       img_url: '',
-    }
+    },
+    searchBody: [],
   }
 
   componentDidMount() {
@@ -70,6 +71,12 @@ class App extends React.Component {
   handleAddWine = newWine => {
     this.setState({
       wines: [...this.state.wines, newWine]
+    })
+  }
+
+  handleSearchWine = searchBody => {
+    this.setState({
+      wines: [...this.state.wines, searchBody]
     })
   }
 
@@ -119,6 +126,7 @@ class App extends React.Component {
       setUserInfo: this.setUserInfo,
       setWines: this.setWines,
       handleAddWine: this.handleAddWine,
+      handleSearchWine: this.handleSearchWine,
       handleHomePage: this.handleHomePage,
       handleLoginPage: this.handleLoginPage,
       handleMainPage: this.handleMainPage,

@@ -84,7 +84,7 @@ class Main extends React.Component {
     }
 
     handleWineFormSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
         const newWine = {
             user_id: this.user_id,
             winemaker: this.state.newWine.winemaker.value,
@@ -117,10 +117,21 @@ class Main extends React.Component {
                             <h3 className='error'> {this.state.error.message} </h3>}
                         <ul>
                             <li>
-                                <input placeholder='winemaker' type='text' className='winemaker' id='winemaker' onChange={(e) => this.initiateWineData('winemaker', e.target.value)} />
+                                <select
+                                    className='wine_type'
+                                    id='wine_type'
+                                    onChange={(e) => this.initiateWineData('wine_type', e.target.value)}
+                                    required
+                                >
+                                    <option value='' hidden>choose a wine type (required)</option>
+                                    <option value='sparkling'>sparkling</option>
+                                    <option value='white'>white</option>
+                                    <option value='rose'>rose</option>
+                                    <option value='red'>red</option>
+                                </select>
                             </li>
                             <li>
-                                <input placeholder='wine type' type='text' className='wine_type' id='wine_type' onChange={(e) => this.initiateWineData('wine_type', e.target.value)} />
+                                <input placeholder='winemaker (required)' type='text' className='winemaker' id='winemaker' onChange={(e) => this.initiateWineData('winemaker', e.target.value)} />
                             </li>
                             <li>
                                 <input placeholder='wine name' type='text' className='wine_name' id='wine_name' onChange={(e) => this.initiateWineData('wine_name', e.target.value)} />
@@ -141,7 +152,7 @@ class Main extends React.Component {
                                 <input placeholder='rate your wine: 1-5' type='number' className='rating' id='rating' onChange={(e) => this.initiateWineData('rating', e.target.value)} />
                             </li>
                             <li>
-                                <input placeholder='photo url (optional)' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
+                                <input placeholder='photo url' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
                             </li>
                         </ul>
                     </fieldset>

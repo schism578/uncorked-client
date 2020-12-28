@@ -18,7 +18,6 @@ const WineApiService = {
     },
 
     postWine(userId, newWine) {
-        console.log(this.user_id)
         return fetch(`${config.USER_API_ENDPOINT}/wine/${userId}`, {
             method: 'POST',
             headers: {
@@ -35,6 +34,25 @@ const WineApiService = {
             .then(res => {
                 this.context.handleAddWine(res)
             })
+    },
+
+    searchWine(userId, search) {
+        return fetch(`${config.USER_API_ENDPOINT}/wine/${userId}`, {
+            method: 'POST',
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ query: search })
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+            .then(res =>
+                res.json()
+            )
     }
 }
 
