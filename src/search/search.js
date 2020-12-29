@@ -59,8 +59,8 @@ class Search extends React.Component {
     }
 
     searchWine(searchBody) {
-        return fetch(`${config.USER_API_ENDPOINT}/wine?${searchBody}`, {
-            method: 'POST',
+        return fetch(`${config.USER_API_ENDPOINT}/wine/search`, {
+            method: 'GET',
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
                 'content-type': 'application/json',
