@@ -103,10 +103,10 @@ class Search extends React.Component {
             wine_type: this.state.searchBody.wine_type.value,
             wine_name: this.state.searchBody.wine_name.value,
             varietal: this.state.searchBody.varietal.value,
-            //vintage: this.state.searchBody.vintage.value,
+            vintage: this.state.searchBody.vintage.value,
             region: this.state.searchBody.region.value,
             tasting_notes: this.state.searchBody.tasting_notes.value,
-            //rating: this.state.searchBody.rating.value,
+            rating: this.state.searchBody.rating.value,
         }
         this.searchWine(searchBody)
             .then(() => {
@@ -143,15 +143,15 @@ class Search extends React.Component {
                             <li>
                                 <input placeholder='region' type='text' className='region' id='region' onChange={(e) => this.initiateSearchData('region', e.target.value)} />
                             </li>
-                            {/*<li>
+                            <li>
                                 <input placeholder='vintage' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateSearchData('vintage', e.target.value)} />
-                            </li>*/}
+                            </li>
                             <li>
                                 <input placeholder='tasting notes' type='text' className='tasting_notes' id='tasting_notes' onChange={(e) => this.initiateSearchData('tasting_notes', e.target.value)} />
                             </li>
-                            {/*<li>
+                            <li>
                                 <input placeholder='rating (1-5)' type='number' className='rating' id='rating' onChange={(e) => this.initiateSearchData('rating', e.target.value)} />
-                            </li>*/}
+                            </li>
                         </ul>
                     </fieldset>
                     <button type='submit' className='search-button'>search</button>
