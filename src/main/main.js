@@ -143,7 +143,7 @@ class Main extends React.Component {
                                 <input placeholder='region' type='text' className='region' id='region' onChange={(e) => this.initiateWineData('region', e.target.value)} />
                             </li>
                             <li>
-                                <input placeholder='vintage (leave blank if non-vintage)' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateWineData('vintage', e.target.value)} />
+                                <input placeholder='vintage (enter 0 if non-vintage)' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateWineData('vintage', e.target.value)} />
                             </li>
                             <li>
                                 <input placeholder='tasting notes' type='text' className='tasting_notes' id='tasting_notes' onChange={(e) => this.initiateWineData('tasting_notes', e.target.value)} />
@@ -152,7 +152,7 @@ class Main extends React.Component {
                                 <input placeholder='rate your wine: 1-5' type='number' className='rating' id='rating' onChange={(e) => this.initiateWineData('rating', e.target.value)} />
                             </li>
                             <li>
-                                <input placeholder='photo url' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
+                                <input placeholder='photo url (enter valid url to save image)' type='text' className='image_url' id='image_url' onChange={(e) => this.initiateWineData('img_url', e.target.value)} />
                             </li>
                         </ul>
                     </fieldset>

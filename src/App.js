@@ -74,9 +74,12 @@ class App extends React.Component {
     })
   }
 
-  handleSearchWine = searchBody => {
+  //res is being added to the already filtered wines for the user and 
+  //displaying an empty list <ul> of wine fields. How do I return only the 
+  //sought after wines? Server-side...
+  handleSearchWine = (res) => {
     this.setState({
-      wines: [...this.state.wines, searchBody]
+      wines: res
     })
   }
 

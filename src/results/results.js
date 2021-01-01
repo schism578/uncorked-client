@@ -1,40 +1,58 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-//import Context from '../context';
+import { Link, withRouter } from 'react-router-dom';
+import Context from '../context';
 //import config from '../config';
-//import { withRouter } from 'react-router-dom';
 //import TokenService from '../services/token-service';
 //import AuthApiService from '../services/auth-api-service';
 import './results.css';
 
-export default function Results() {
-    return (
-        <div>
-            <h2>results</h2>
-            <ul>
-                <li>winemaker:  Sean Thackeray</li>
-                <li>wine name:  Orion</li>
-                <li>varietal(s):  Syrah</li>
-                <li>vintage:  2016</li>
-                <li>wine type:  red</li>
-                <li id='tasting-notes'>tasting notes:  smoke, olives, herbal, oaky, tannic</li>
-                <li>rating: * * * * *</li>
-            </ul>
-            <ul>
-                <li>winemaker:  Andre Clouet</li>
-                <li>wine name:  Brut Rose</li>
-                <li>varietal(s):  Champagne</li>
-                <li>vintage:  NV</li>
-                <li>wine type:  sparkling</li>
-                <li id='tasting-notes'>tasting notes:  quince, roasted strawberries, lactic, opulent effervescence</li>
-                <li>rating: * * * * *</li>
-            </ul>
-            <Link
-                                to='/main'
-                                type='button'
-                                className='return-button'
-                            >
-                                go back</Link>
+class Results extends React.Component {
+    static contextType = Context;
+
+    wineImage = (wine) => {
+        if (wine.img_url) {
+            return <img src={wine.img_url} alt='glass of wine' width='130' height='160' />
+        } if (wine.wine_type === 'red') {
+            return <img src={'/images/red.jpg'} alt='glass of red wine' />
+        } if (wine.wine_type === 'white') {
+            return <img src={'/images/white.jpg'} alt='glass of white wine' />
+        } if (wine.wine_type === 'rose') {
+            return <img src={'/images/rose.jpg'} alt='glass of rose wine' />
+        } if (wine.wine_type === 'sparkling') {
+            return <img src={'/images/sparkling.jpg'} alt='glass of sparkling wine' />
+        }
+    }
+
+    searchWines = () => this.context.wines.map(wine => (
+        <div key={wine.wine_id} className='search-wine-item'>
+            {this.wineImage(wine)}
+            <li>wine type:  {wine.wine_type}</li>
+            <li>winemaker:  {wine.winemaker}</li>
+            <li>wine name:  {wine.wine_name}</li>
+            <li>varietal(s):  {wine.varietal}</li>
+            <li>vintage:  {wine.vintage}</li>
+            <li>region:  {wine.region}</li>
+            <li>tasting notes:  {wine.tasting_notes}</li>
+            <li>rating: {wine.rating}</li>
         </div>
-    )
+    ))
+
+    render() {
+        return (
+            <div>
+                <h2>results</h2>
+                <ul className='search-wine-list'>
+                    {this.searchWines()}
+                </ul>
+                <Link
+                    to='/main'
+                    type='button'
+                    className='return-button'
+                >
+                    go back</Link>
+            </div>
+        )
+    }
 }
+
+export default withRouter(Results);

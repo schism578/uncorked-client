@@ -1,7 +1,7 @@
 import React from 'react';
 import Context from '../context';
 import config from '../config';
-import { withRouter } from 'react-router-dom';
+import { Link ,withRouter } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import './search.css';
 
@@ -58,14 +58,33 @@ class Search extends React.Component {
         })
     }
 
-    searchWine(searchBody) {
-        return fetch(`${config.USER_API_ENDPOINT}/wine/search`, {
+    formatQueryParams(params) {
+        const queryItems = Object.keys(params)
+            .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        return queryItems.join('&');
+    }
+
+    searchWine() {
+        const params = {
+            winemaker: `${this.state.searchBody.winemaker.value}`,
+            wine_type: `${this.state.searchBody.wine_type.value}`,
+            wine_name: `${this.state.searchBody.wine_name.value}`,
+            varietal: `${this.state.searchBody.varietal.value}`,
+            vintage: `${this.state.searchBody.vintage.value}`,
+            region: `${this.state.searchBody.region.value}`,
+            tasting_notes: `${this.state.searchBody.tasting_notes.value}`,
+            rating: `${this.state.searchBody.rating.value}`,
+        };
+
+        const queryString = this.formatQueryParams(params);
+        const searchURL = `${config.USER_API_ENDPOINT}/wine/search?${queryString}`;
+
+        return fetch(searchURL, {
             method: 'GET',
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(searchBody)
         })
             .then(res =>
                 (!res.ok)
@@ -73,8 +92,7 @@ class Search extends React.Component {
                     : res.json()
             )
             .then(res => {
-                console.log(res)
-                this.handleSearchWine(res)
+                this.context.handleSearchWine(res)
             })
     }
 
@@ -85,10 +103,10 @@ class Search extends React.Component {
             wine_type: this.state.searchBody.wine_type.value,
             wine_name: this.state.searchBody.wine_name.value,
             varietal: this.state.searchBody.varietal.value,
-            vintage: parseInt(this.state.searchBody.vintage.value),
+            //vintage: this.state.searchBody.vintage.value,
             region: this.state.searchBody.region.value,
             tasting_notes: this.state.searchBody.tasting_notes.value,
-            rating: parseInt(this.state.searchBody.rating.value),
+            //rating: this.state.searchBody.rating.value,
         }
         this.searchWine(searchBody)
             .then(() => {
@@ -125,22 +143,24 @@ class Search extends React.Component {
                             <li>
                                 <input placeholder='region' type='text' className='region' id='region' onChange={(e) => this.initiateSearchData('region', e.target.value)} />
                             </li>
-                            <li>
+                            {/*<li>
                                 <input placeholder='vintage' type='text' className='vintage' id='vintage' onChange={(e) => this.initiateSearchData('vintage', e.target.value)} />
-                            </li>
+                            </li>*/}
                             <li>
                                 <input placeholder='tasting notes' type='text' className='tasting_notes' id='tasting_notes' onChange={(e) => this.initiateSearchData('tasting_notes', e.target.value)} />
                             </li>
-                            <li>
+                            {/*<li>
                                 <input placeholder='rating (1-5)' type='number' className='rating' id='rating' onChange={(e) => this.initiateSearchData('rating', e.target.value)} />
-                            </li>
+                            </li>*/}
                         </ul>
                     </fieldset>
+                    <button type='submit' className='search-button'>search</button>
                 </form>
-                <br></br>
-                <button type='submit' className='search-button'>search</button>
-                <br></br>
-                <button type='submit' className='cancel-button'>cancel</button>
+                <Link to='/main'>
+                    <button type='submit' className='cancel-button'>
+                        cancel
+                    </button>
+                </Link>
             </div>
         )
     }

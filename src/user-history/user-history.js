@@ -5,9 +5,24 @@ import './user-history.css';
 
 class UserHistory extends React.Component {
     static contextType = Context;
-   
+
+    wineImage = (wine) => {
+        if (wine.img_url) {
+            return <img src={wine.img_url} alt='glass of wine' width='130' height='160' />
+        } if (wine.wine_type === 'red') {
+            return <img src={'/images/red.jpg'} alt='glass of red wine' />
+        } if (wine.wine_type === 'white') {
+            return <img src={'/images/white.jpg'} alt='glass of white wine' />
+        } if (wine.wine_type === 'rose') {
+            return <img src={'/images/rose.jpg'} alt='glass of rose wine' />
+        } if (wine.wine_type === 'sparkling') {
+            return <img src={'/images/sparkling.jpg'} alt='glass of sparkling wine' />
+        }
+    }
+
     userWines = () => this.context.wines.map(wine => (
         <div key={wine.wine_id} className='user-wine-item'>
+            {this.wineImage(wine)}
             <li>wine type:  {wine.wine_type}</li>
             <li>winemaker:  {wine.winemaker}</li>
             <li>wine name:  {wine.wine_name}</li>
@@ -26,12 +41,11 @@ class UserHistory extends React.Component {
                 <ul className='user-wine-list'>
                     {this.userWines()}
                 </ul>
-                <Link
-                    to='/main'
-                    type='button'
-                    className='return-button'
-                >
-                    go back</Link>
+                <Link to='/main'>
+                    <button type='submit' className='return-button'>
+                        go back
+                    </button>
+                </Link>
             </div>
         )
     }

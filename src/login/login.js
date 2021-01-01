@@ -121,7 +121,7 @@ class Login extends React.Component {
                     <fieldset className='create-field'>
                         <legend>create profile:</legend>
                         {this.state.error &&
-                            <h3 className='error'> {this.state.error} </h3>}
+                            <h3 className='error'> {this.state.error.message} </h3>}
                         <ul className='profile-list'>
                             <li>
                                 <input
