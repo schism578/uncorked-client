@@ -8,7 +8,7 @@ body {
     text-align: center;
     color: blanchedalmond;
     font-family: 'Federo', sans-serif;
-    background: url(./images/app-background.jpg)center center no-repeat fixed;
+    background: url('./images/app-background.jpg')center center no-repeat fixed;
     background-size: cover;
 }
 
