@@ -8,7 +8,7 @@
     new, save the details, remember and revisit your favorites by searching  
     any of those details. Discover. Delight. Uncork it!
 
-### [Check out the app here!](https://uncorked-client-bmjtryrq1.vercel.app)  
+### [Check out the app here!](https://uncorked-client-bls66ff5f.vercel.app)  
 
 #### [Client Repository](https://github.com/schism578/uncorked-client.git)
 #### [API Repository](https://github.com/schism578/uncorked-api.git)
