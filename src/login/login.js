@@ -79,12 +79,10 @@ class Login extends React.Component {
         }
         AuthApiService.postUser(newUser)
             .then(res => {
-                console.log(res)
                 TokenService.saveAuthToken(res.authToken)
                 this.context.setUserInfo(res)
                 WineApiService.getWine(res.user.user_id)
             .then(res => {
-                console.log(res)
                 this.context.setWines(res)
                 this.props.history.push('/main')
             })
