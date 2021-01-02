@@ -1,4 +1,4 @@
-<img src='./images/favicon.jpg' alt='app icon' width='150'/>
+<img src='./images/favicon.ico' alt='app icon' width='150'/>
 
 # Uncorked  
 
