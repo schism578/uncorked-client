@@ -9,7 +9,9 @@
     any of those details. Discover. Delight. Uncork it!
 
 ### [Check out the app here!](https://uncorked-client-dqm5m1mwx.vercel.app)  
-
+&nbsp;&nbsp;&nbsp;Demo Credentials:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsername: User  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: Tornado5!  
 #### [Client Repository](https://github.com/schism578/uncorked-client.git)
 #### [API Repository](https://github.com/schism578/uncorked-api.git)
 

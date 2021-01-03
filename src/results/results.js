@@ -37,12 +37,18 @@ class Results extends React.Component {
         </div>
     ))
 
+    resultsValidator = () => {
+        return this.context.wines.length > 0 
+        ? this.searchWines() 
+        : 'no wines match that search'
+    }
+
     render() {
         return (
             <div>
                 <h2>results</h2>
                 <ul className='search-wine-list'>
-                    {this.searchWines()}
+                    {this.resultsValidator()}
                 </ul>
                 <Link
                     to='/main'
