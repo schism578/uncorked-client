@@ -5,20 +5,30 @@
 
 }
 
-.nav-link {
-    color: rgb(46, 46, 46);
-    font-size: 20px;
+.nav-button {
+    margin: 0.3em auto;
+    font-family: 'Federo', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    color: blanchedalmond;
+    background-color: firebrick;
 }
 
-.nav-link:hover {
-    color: firebrick;
-}
-
-.logout-link {
+.nav-button:hover {
+    cursor: pointer;
     color: black;
-    font-size: 20px;
 }
 
-.logout-link:hover {
-    color: firebrick;
+.logout-button {
+    margin: 0.3em auto;
+    font-family: 'Federo', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    color: blanchedalmond;
+    background-color: firebrick;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    color: black;
 }

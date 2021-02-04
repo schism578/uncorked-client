@@ -6,7 +6,7 @@ ul {
   
 body {
     text-align: center;
-    color: rgb(216, 213, 213);
+    color: rgb(226, 225, 225);
     font-family: 'Federo', sans-serif;
     background: url('./images/grape-corkscrew.jpg')center center no-repeat fixed;
     background-size: cover;
@@ -14,8 +14,7 @@ body {
 
 main {
     background-color: rgba(0, 0, 0, 0.3);
-    /*min-width: 50vw;*/
-    min-height: 60vh;
+    min-height: 84vh;
     border-radius: 5px;
 }
 

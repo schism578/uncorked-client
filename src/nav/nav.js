@@ -17,7 +17,9 @@ export default class Nav extends React.Component {
                     to='/login'
                     className='logout-link'
                 >
-                    logout
+                    <button type='submit' className='logout-button'>
+                        logout
+                    </button>
                 </Link>
             </div>
         )
@@ -27,11 +29,28 @@ export default class Nav extends React.Component {
         return (
             <div>
                 <ul className='nav-links'>
-                    <li><Link to={TokenService.hasAuthToken() ? '/main' : '/'} 
-                            type='button' className='nav-link'>home</Link>
+                    <li>
+                        <Link to={TokenService.hasAuthToken() ? '/main' : '/'}
+                        type='button' className='nav-link'>
+                            <button type='submit' className='nav-button'>
+                                home
+                            </button>
+                        </Link>
                     </li>
-                    <li><Link to='/search' type='button' className='nav-link'>search</Link></li>
-                    <li><Link to='/history' type='button' className='nav-link'>history</Link></li>
+                    <li>
+                        <Link to='/search' type='button' className='nav-link'>
+                            <button type='submit' className='nav-button'>
+                                search
+                            </button>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/history' type='button' className='nav-link'>
+                            <button type='submit' className='nav-button'>
+                                history
+                            </button>
+                        </Link>
+                    </li>
                 </ul>
                 {TokenService.hasAuthToken()
                     ? this.renderLogoutLink()
