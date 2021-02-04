@@ -28,5 +28,5 @@
 </p>
 <p float='left'>
 <img src='./src/images/main.png' alt='screenshot of main page' width='300' height='450'>
-<img src='./src/images/history.png' alt='screenshot of search results page' width='300' height='450'>
+<img src='./src/images/search.png' alt='screenshot of search page' width='300' height='450'>
 </p>
