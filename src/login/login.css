@@ -1,3 +1,7 @@
+fieldset {
+    margin: 0 5px;
+}
+
 legend {
     font-size: 20px;
 }

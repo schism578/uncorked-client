@@ -8,6 +8,7 @@
 
 h2, p {
     margin: 3em auto;
+    /*text-shadow: 1px 1px rgb(117, 131, 143);*/
 }
 
 h2 {
@@ -19,7 +20,7 @@ p {
 }
 
 .start-button {
-    color: rgb(255, 255, 255);
+    color: rgb(216, 213, 213);
     font-size: 20px;
     margin: 2em auto;
 }

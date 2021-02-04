@@ -18,3 +18,17 @@ img {
     justify-content: flex-start;
     margin: 0;
 }
+
+.return-button {
+    margin: 0.3em auto;
+    font-family: 'Federo', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    color: blanchedalmond;
+    background-color: firebrick;
+}
+
+.return-button:hover {
+    cursor: pointer;
+    color: black;
+}

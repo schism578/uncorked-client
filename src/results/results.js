@@ -50,12 +50,11 @@ class Results extends React.Component {
                 <ul className='search-wine-list'>
                     {this.resultsValidator()}
                 </ul>
-                <Link
-                    to='/main'
-                    type='button'
-                    className='return-button'
-                >
-                    go back</Link>
+                <Link to='/main'>
+                    <button type='submit' className='return-button'>
+                        go back
+                    </button>
+                </Link>
             </div>
         )
     }

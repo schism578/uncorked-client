@@ -6,17 +6,24 @@ ul {
   
 body {
     text-align: center;
-    color: blanchedalmond;
+    color: rgb(216, 213, 213);
     font-family: 'Federo', sans-serif;
-    background: url('./images/app-background.jpg')center center no-repeat fixed;
+    background: url('./images/grape-corkscrew.jpg')center center no-repeat fixed;
     background-size: cover;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.3);
+    /*min-width: 50vw;*/
+    min-height: 60vh;
+    border-radius: 5px;
 }
 
 h1 {
     margin: 0.5em auto;
     font-size: 48px;
     font-weight: bolder;
-    color: blanchedalmond;
+    color: rgb(59, 59, 59);
     /*background-color: rgba(110, 90, 70, 0.7);*/
 }
 
